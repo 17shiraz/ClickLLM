@@ -1,5 +1,5 @@
 # ClickLLM
-
+This repository contains the scripts for our paper "LLM-as-a-Judge in Entity Retrieval: Assessing Explicit and Implicit Relevance"
 ## Scripts
 Our project files consist of three stages: Relevance Judgement, Reason Nuggetization, and Label Assignment
 ### Relevance Judgement
@@ -9,13 +9,14 @@ The script ``gold_standard_abstract_graded.py`` prompts an LLM of choice ``Qwen3
 The ``use_abstract`` flag determines whether the script uses **entity titles** or **entity abstracts** for the judgement task.
 
 #### LaQuE
-``laque_graded.py``
+The script ``laque_graded.py`` prompts an LLM of choice ``Qwen3:8b`` or ``LLama4:Scout`` to perform a judgement task on LaQuE query-entity pairs.
 
 ### Reason Nuggetization
-``laque_analysis.py
+The ``laque_analysis.py`` prompts an LLM of choice ``Qwen3:8b`` or ``LLama4:Scout`` to perform an analysis of the reasons why users have clicked on the entity despite irrelevance to the query as determined by LLM.
+The LLM will produce a separate list of reasons for each query-entity pair, which we will then aggregate to 6 general distilled reasons.
 
 ### Label Assignment
-``laque_analysis_assigner.py``
+Once the reasons are generated, run ``laque_analysis_assigner.py`` to assign a binary value of 0 or 1 for each query-entity pair depending on whether the LLM thinks the corresponding list item is an applicable reason for the user clicking on the entity.
 
 ## Prompt
 ```
