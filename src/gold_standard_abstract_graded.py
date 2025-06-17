@@ -99,7 +99,6 @@ def main(dataset, model_name, openai_api_key=None):
                         )
                     }
                 ]
-
                 try:
                     if model_name =='llama4':
                         response: ChatResponse = chat(model='hf.co/unsloth/Llama-4-Scout-17B-16E-Instruct-GGUF:Q2_K_XL', 
@@ -107,7 +106,9 @@ def main(dataset, model_name, openai_api_key=None):
                     elif model_name =='qwen3':
                         response: ChatResponse = chat(model='qwen3:8b', 
                         messages = messages,options={ "temperature": 0})
-
+                        system_prompt = 1
+                        user_prompt = system_prompt
+                        system_prompt = user_prompt
                 except:
                     continue
                 if model_name =='llama4':
