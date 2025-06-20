@@ -35,3 +35,35 @@ Break down each query into these steps:\n"
 "IMPORTANT: Your response must only be in the format of "Final score: #" \n"
 "Relevant?"
  ```
+
+## Results Figures
+
+### Figure 1: Llama Model Evaluations
+
+<table>
+  <tr>
+    <td align="center"><img src="assets/Llama_Abstract_BInary.png" width="200" alt="Llama Abstract Binary"><br><b>Abstract Binary</b></td>
+    <td align="center"><img src="assets/Llama_Abstract_Graded.png" width="200" alt="Llama Abstract Graded"><br><b>Abstract Graded</b></td>
+    <td align="center"><img src="assets/Llama_Title_Binary.png" width="200" alt="Llama Title Binary"><br><b>Title Binary</b></td>
+    <td align="center"><img src="assets/Llama_Title_Graded.png" width="200" alt="Llama Title Graded"><br><b>Title Graded</b></td>
+  </tr>
+</table>
+
+### Figure 2: Qwen Model Evaluations
+
+<table>
+  <tr>
+    <td align="center"><img src="assets/Qwen_Abstract_Binary.png" width="200" alt="Qwen Abstract Binary"><br><b>Abstract Binary</b></td>
+    <td align="center"><img src="assets/Qwen_Abstract_Graded.png" width="200" alt="Qwen Abstract Graded"><br><b>Abstract Graded</b></td>
+    <td align="center"><img src="assets/Qwen_Title_Binary.png" width="200" alt="Qwen Title Binary"><br><b>Title Binary</b></td>
+    <td align="center"><img src="assets/Qwen_Title_Graded.png" width="200" alt="Qwen Title Graded"><br><b>Title Graded</b></td>
+  </tr>
+</table>
+
+### Figure 3: LLM Reason Assignment Results
+
+This figure shows the results of each LLM assigning clicked reasons to each entity. Each row corresponds to an entity, and each column represents a possible reason distilled from user clicks. The figure summarizes how each LLM evaluated and assigned reasons for user clicks across all entities.
+
+<p align="center">
+  <img src="assets/Reasons.png" width="600" alt="LLM Reason Assignment Results">
+</p>
