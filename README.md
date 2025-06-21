@@ -29,7 +29,7 @@ Comparing LLM-based relevance judgments to human annotations on DBpedia-Entity.
 
 Distribution of LLM-generated reasons for user clicks on entities judged irrelevant. Prominent result bias and lexical similarity are the most frequent factors.
 
-<p align="center">
+<p align="left">
   <img src="assets/Reasons.png" width="600" alt="LLM Reason Assignment Results">
 </p>
 
