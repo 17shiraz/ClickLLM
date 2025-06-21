@@ -2,7 +2,7 @@
 This repository contains the code and extended results for our paper "LLM-as-a-Judge in Entity Retrieval: Assessing Explicit and Implicit Relevance"
 
 ## Main Results
-Comparing LLM-based relevance judgments to human annotations on DBpedia-Entity.
+Figures 1 and 2 compare LLM-based relevance judgments to human annotations on DBpedia-Entity.
 ### Figure 1: Llama Model Evaluations
 
 <table>
@@ -25,7 +25,7 @@ Comparing LLM-based relevance judgments to human annotations on DBpedia-Entity.
   </tr>
 </table>
 
-### Figure 3: LLM Click-through Reason Assignment Results
+### Figure 3: LLM Click-through Reason Assignment Results on LaQuE
 
 Distribution of LLM-generated reasons for user clicks on entities judged irrelevant. Prominent result bias and lexical similarity are the most frequent factors.
 
