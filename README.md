@@ -1,5 +1,39 @@
 # ClickLLM
-This repository contains the scripts for our paper "LLM-as-a-Judge in Entity Retrieval: Assessing Explicit and Implicit Relevance"
+This repository contains the code and extended results for our paper "LLM-as-a-Judge in Entity Retrieval: Assessing Explicit and Implicit Relevance"
+
+## Main Results
+Comparing LLM-based relevance judgments to human annotations on DBpedia-Entity.
+### Figure 1: Llama Model Evaluations
+
+<table>
+  <tr>
+    <td align="center"><img src="assets/Llama_Abstract_BInary.png" width="200" alt="Llama Abstract Binary"><br><b>Abstract Binary</b></td>
+    <td align="center"><img src="assets/Llama_Abstract_Graded.png" width="200" alt="Llama Abstract Graded"><br><b>Abstract Graded</b></td>
+    <td align="center"><img src="assets/Llama_Title_Binary.png" width="200" alt="Llama Title Binary"><br><b>Title Binary</b></td>
+    <td align="center"><img src="assets/Llama_Title_Graded.png" width="200" alt="Llama Title Graded"><br><b>Title Graded</b></td>
+  </tr>
+</table>
+
+### Figure 2: Qwen Model Evaluations
+
+<table>
+  <tr>
+    <td align="center"><img src="assets/Qwen_Abstract_Binary.png" width="200" alt="Qwen Abstract Binary"><br><b>Abstract Binary</b></td>
+    <td align="center"><img src="assets/Qwen_Abstract_Graded.png" width="200" alt="Qwen Abstract Graded"><br><b>Abstract Graded</b></td>
+    <td align="center"><img src="assets/Qwen_Title_Binary.png" width="200" alt="Qwen Title Binary"><br><b>Title Binary</b></td>
+    <td align="center"><img src="assets/Qwen_Title_Graded.png" width="200" alt="Qwen Title Graded"><br><b>Title Graded</b></td>
+  </tr>
+</table>
+
+### Figure 3: LLM Click-through Reason Assignment Results
+
+Distribution of LLM-generated reasons for user clicks on entities judged irrelevant. Prominent result bias and lexical similarity are the most frequent factors.
+
+<p align="center">
+  <img src="assets/Reasons.png" width="600" alt="LLM Reason Assignment Results">
+</p>
+
+
 ## Scripts
 Our project files consist of three stages: Relevance Judgement, Reason Nuggetization, and Label Assignment
 ### Relevance Judgement
@@ -35,35 +69,3 @@ Break down each query into these steps:\n"
 "IMPORTANT: Your response must only be in the format of "Final score: #" \n"
 "Relevant?"
  ```
-
-## Results Figures
-
-### Figure 1: Llama Model Evaluations
-
-<table>
-  <tr>
-    <td align="center"><img src="assets/Llama_Abstract_BInary.png" width="200" alt="Llama Abstract Binary"><br><b>Abstract Binary</b></td>
-    <td align="center"><img src="assets/Llama_Abstract_Graded.png" width="200" alt="Llama Abstract Graded"><br><b>Abstract Graded</b></td>
-    <td align="center"><img src="assets/Llama_Title_Binary.png" width="200" alt="Llama Title Binary"><br><b>Title Binary</b></td>
-    <td align="center"><img src="assets/Llama_Title_Graded.png" width="200" alt="Llama Title Graded"><br><b>Title Graded</b></td>
-  </tr>
-</table>
-
-### Figure 2: Qwen Model Evaluations
-
-<table>
-  <tr>
-    <td align="center"><img src="assets/Qwen_Abstract_Binary.png" width="200" alt="Qwen Abstract Binary"><br><b>Abstract Binary</b></td>
-    <td align="center"><img src="assets/Qwen_Abstract_Graded.png" width="200" alt="Qwen Abstract Graded"><br><b>Abstract Graded</b></td>
-    <td align="center"><img src="assets/Qwen_Title_Binary.png" width="200" alt="Qwen Title Binary"><br><b>Title Binary</b></td>
-    <td align="center"><img src="assets/Qwen_Title_Graded.png" width="200" alt="Qwen Title Graded"><br><b>Title Graded</b></td>
-  </tr>
-</table>
-
-### Figure 3: LLM Reason Assignment Results
-
-This figure shows the results of each LLM assigning clicked reasons to each entity. Each row corresponds to an entity, and each column represents a possible reason distilled from user clicks. The figure summarizes how each LLM evaluated and assigned reasons for user clicks across all entities.
-
-<p align="center">
-  <img src="assets/Reasons.png" width="600" alt="LLM Reason Assignment Results">
-</p>
