@@ -34,6 +34,8 @@ Distribution of LLM-generated reasons for user clicks on entities judged irrelev
 </p>
 
 ## Repository Structure
+
+```
 ClickLLM/
 ├── assets/        # Figures and images used in documentation and results
 ├── data/          # Datasets, queries, qrels, and supporting data files
@@ -43,6 +45,19 @@ ClickLLM/
 │   │   └── laque/     # Judgments for LaQuE dataset
 │   └── llm_reasoning/ # LLM-generated reason assignments
 └── src/           # Source code for scripts and analysis
+    ├── dbpedia_judgement.py         # Runs LLM-based relevance judgments on DBpedia-Entity, comparing entity titles and abstracts for each query-entity pair
+    ├── laque_judgement.py           # Applies LLM-based relevance judgments to the LaQuE dataset, supporting multiple years/collections and both positive and negative entity samples
+    ├── laque_analysis.py            # Analyzes and distills the reasons why users clicked on entities deemed irrelevant, generating a conceptual list of atomic reasons per query-entity pair using LLMs
+    └── laque_analysis_assigner.py   # Assigns binary labels for each query-entity pair and reason, determining if the LLM thinks a specific reason applies to the user's click behavior
+```
+
+### Contents of `src/` directory
+
+- **dbpedia_judgement.py**: Runs LLM-based relevance judgments on DBpedia-Entity, comparing entity titles and abstracts for each query-entity pair.
+- **laque_judgement.py**: Applies LLM-based relevance judgments to the LaQuE dataset, supporting multiple years/collections and both positive and negative entity samples.
+- **laque_analysis.py**: Analyzes and distills the reasons why users clicked on entities deemed irrelevant, generating a conceptual list of atomic reasons per query-entity pair using LLMs.
+- **laque_analysis_assigner.py**: Assigns binary labels for each query-entity pair and reason, determining if the LLM thinks a specific reason applies to the user's click behavior.
+
 
 ## Tabular Results
 
