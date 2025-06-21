@@ -33,6 +33,67 @@ Distribution of LLM-generated reasons for user clicks on entities judged irrelev
   <img src="assets/Reasons.png" width="600" alt="LLM Reason Assignment Results">
 </p>
 
+## Repository Structure
+ClickLLM/
+├── assets/        # Figures and images used in documentation and results
+├── data/          # Datasets, queries, qrels, and supporting data files
+├── outputs/       # Output results from LLM judgments and reasoning
+│   ├── llm_qrel/      # LLM-generated relevance judgments
+│   │   ├── dbpedia/   # Judgments for DBpedia dataset
+│   │   └── laque/     # Judgments for LaQuE dataset
+│   └── llm_reasoning/ # LLM-generated reason assignments
+└── src/           # Source code for scripts and analysis
+
+## Tabular Results
+
+### Table 1: Example queries and relevance judgments from DBpedia-Entity
+
+| Query                        | Entity                                                                                  | LLM | Human |
+|-----------------------------|------------------------------------------------------------------------------------------|-----|--------|
+| *Einstein Relativity theory* | [Theory of Relativity](https://dbpedia.org/page/Theory_of_Relativity)                   | 2   | 2      |
+| *Disney Orlando*            | [Greater Orlando](https://dbpedia.org/page/Greater_Orlando)                             | 1   | 0      |
+| *Austin Texas*              | [Texas](https://dbpedia.org/page/Texas)                                                 | 0   | 1      |
+| *Guitar Classical Bach*     | [Johann Sebastian Bach](https://dbpedia.org/page/Johan_Sebastian_Bach)                  | 2   | 0      |
+
+---
+
+### Table 2: Example queries from the LaQuE dataset with clicked entities and LLM judgments
+
+| Query                          | Clicked Entity                                                                 | LLM Judgment  |
+|--------------------------------|--------------------------------------------------------------------------------|---------------|
+| *Apple Mac*                    | [Macintosh](https://dbpedia.org/page/Macintosh)                                | Relevant      |
+| *Indian History in Hindi*      | [Hindi](https://dbpedia.org/page/Hindi)                                        | Not Relevant  |
+| *CNN News Cast Members*        | [List of CNN Anchors](https://dbpedia.org/page/List_of_cnn_anchors)            | Relevant      |
+| *When Was Color Invented*      | [Color television](https://dbpedia.org/page/Color_television)                  | Not Relevant  |
+
+---
+
+### Table 3: Cohen’s κ scores for binary and graded LLM judgments from DBpedia-Entity
+
+| Input                 | Binary   | Graded   |
+|----------------------|----------|----------|
+| *Titles*             | 0.3900   | 0.2733   |
+| *Titles + Abstracts* | 0.4623   | 0.3042   |
+
+---
+
+### Table 4: Agreement between LLM relevance judgments and click-through data on 15k queries
+
+| Input                 | # Agreements | Accuracy   |
+|----------------------|--------------|------------|
+| *Titles*             | 14,910       | 91.93%     |
+| *Titles + Abstracts* | 14,888       | 91.79%     |
+
+---
+
+### Table 5: Example LaQuE queries with clicked entities and LLM click-through reasoning
+
+| Query                    | Clicked Entity                                                                 | LLM Reasoning                                                                                   |
+|--------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| *X Factor USA Judges*    | [The X Factor (UK TV series)](https://dbpedia.org/page/The_X_Factor_(British_TV_series))     | Name or lexical similarity, Prominent Results Bias                                              |
+| *Palm Springs Florida*   | [Palm Springs, California](https://dbpedia.org/page/Palm_Springs,_California)              | Name or lexical similarity, Geographic name confusion                                           |
+| *Brad Pitt Vegan*        | [List of vegans](https://dbpedia.org/page/list_of_vegans)                                  | Category or topical association, Prominent Result Bias, Exploratory curiosity                   |
+| *John Bundy*             | [Ted Bundy](https://dbpedia.org/page/Ted_Bundy)                                            | Name or lexical similarity, Prominent Result Bias, Exploratory curiosity, Familiarity Bias      |
 
 ## Scripts
 Our project files consist of three stages: Relevance Judgement, Reason Nuggetization, and Label Assignment
