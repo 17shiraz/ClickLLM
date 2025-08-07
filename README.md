@@ -77,10 +77,11 @@ ClickLLM/
 
 ### Table 3: Cohen’s κ scores for binary and graded LLM judgments from DBpedia-Entity
 
-| Input                 | Binary   | Graded   |
-|----------------------|----------|----------|
-| *Titles*             | 0.3900   | 0.2733   |
-| *Titles + Abstracts* | 0.4623   | 0.3042   |
+| Input                 | Qwen3:8b           || LLama4:Scout        ||
+|                       | Binary   | Graded   | Binary              | Graded              |
+|-----------------------|----------|----------|---------------------|---------------------|
+| *Titles*             | 0.3900          | 0.2733          | 0.4647                   | 0.3428                   |
+| *Titles + Abstracts* | 0.4623          | 0.3042          | 0.5236                   | 0.3658                   |
 
 ---
 
