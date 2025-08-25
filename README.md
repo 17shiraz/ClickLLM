@@ -1,6 +1,24 @@
 # ClickLLM
 This repository contains the code and extended results for our paper "LLM-as-a-Judge in Entity Retrieval: Assessing Explicit and Implicit Relevance"
 
+## Repository Structure
+
+```
+ClickLLM/
+├── assets/        # Figures and images used in documentation and results
+├── data/          # Datasets, queries, qrels, and supporting data files
+├── outputs/       # Output results from LLM judgments and reasoning
+│   ├── llm_qrel/      # LLM-generated relevance judgments
+│   │   ├── dbpedia/   # Judgments for DBpedia dataset
+│   │   └── laque/     # Judgments for LaQuE dataset
+│   └── llm_reasoning/ # LLM-generated reason assignments
+└── src/           # Source code for scripts and analysis
+    ├── dbpedia_judgement.py         # Runs LLM-based relevance judgments on DBpedia-Entity
+    ├── laque_judgement.py           # Runs LLM-based relevance judgments on the LaQuE dataset
+    ├── laque_analysis.py            # Analyzes and distills the reasons why users clicked on entities deemed irrelevant, generating a conceptual list of atomic reasons per query-entity pair using LLMs
+    └── laque_analysis_assigner.py   # Assigns binary labels for each query-entity pair and reason, determining if the LLM thinks a specific reason applies to the user's click behavior
+```
+
 ## Main Results
 Figures 1 and 2 compare LLM-based relevance judgments to human annotations on DBpedia-Entity.
 ### Figure 1: Llama Model Evaluations
@@ -33,24 +51,6 @@ Distribution of LLM-generated reasons for user clicks on entities judged irrelev
   <img src="assets/Reasons.png" width="600" alt="LLM Reason Assignment Results">
 </p>
 
-## Repository Structure
-
-```
-ClickLLM/
-├── assets/        # Figures and images used in documentation and results
-├── data/          # Datasets, queries, qrels, and supporting data files
-├── outputs/       # Output results from LLM judgments and reasoning
-│   ├── llm_qrel/      # LLM-generated relevance judgments
-│   │   ├── dbpedia/   # Judgments for DBpedia dataset
-│   │   └── laque/     # Judgments for LaQuE dataset
-│   └── llm_reasoning/ # LLM-generated reason assignments
-└── src/           # Source code for scripts and analysis
-    ├── dbpedia_judgement.py         # Runs LLM-based relevance judgments on DBpedia-Entity
-    ├── laque_judgement.py           # Runs LLM-based relevance judgments on the LaQuE dataset
-    ├── laque_analysis.py            # Analyzes and distills the reasons why users clicked on entities deemed irrelevant, generating a conceptual list of atomic reasons per query-entity pair using LLMs
-    └── laque_analysis_assigner.py   # Assigns binary labels for each query-entity pair and reason, determining if the LLM thinks a specific reason applies to the user's click behavior
-```
-
 ## Tabular Results
 
 ### Table 1: Example queries and relevance judgments from DBpedia-Entity
@@ -81,7 +81,7 @@ ClickLLM/
     <tr>
       <th rowspan="2">Input</th>
       <th colspan="2">Qwen3</th>
-      <th colspan="2">LLama4</th>
+      <th colspan="2">Llama4</th>
     </tr>
     <tr>
       <th>Binary</th>
